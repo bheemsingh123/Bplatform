@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% block title %}
+  post
+{% endblock %}
+{% block content %}
+  <div class="grid grid-cols-6 gap-4 p-5">
+    <div class="col-span-1">
+       
+    </div>
+    <div class="col-span-4">
+        
+      
+<div class=" bg-white border  rounded-lg shadow ">
+    <h5 class="mb-2 text-2xl font-bold text-center">{{ posts.title }}</h5>
+    <h5 class="mb-2 text-xl font-bold text-center">{{ posts.cat.title }}</h5>
+        <img class="rounded-t-lg h-[50vh] w-full" src="/media/{{ posts.image }}" alt="" />
+    <div class="p-5">
+      
+        <p class="py-3  text-white ">{{ posts.content|safe }}</p>
+        
+    </div>
+</div>
+
+    </div>
+    <div class="col-span-1">
+       
+    </div>
+  </div>
+
+ {% comment %} {% for cat in cats %}
+              <div class="row">
+                <div class="">
+                  <div class="card">
+                    <div class="card-image">
+                      <img src="/media/{{ cat.image }}" style="height:120px;" />
+                      <b class="">{{ cat.title }}</b>
+                      <p class="truncate">{{ cat.description }}</p>
+                    </div>
+                    <div class="card-action">
+                      <a href="/category/{{ cat.url }}" class="btn">view</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            {% endfor %} {% endcomment %}
+
+{% comment %} 
+
+
+<!-- Container for demo purpose -->
+<div class="container my-24 px-6 mx-auto">
+  
+  <!-- Section: Design Block -->
+  <section class="mb-32 text-gray-800">
+    <img src="https://mdbootstrap.com/img/new/slides/198.jpg" class="w-full shadow-lg rounded-lg mb-6" alt="" />
+
+    <div class="flex items-center mb-6">
+      <img src="https://mdbootstrap.com/img/Photos/Avatars/img (23).jpg" class="rounded-full mr-2 h-8" alt=""
+        loading="lazy" />
+      <div>
+        <span> Published <u>15.07.2020</u> by </span>
+        <a href="#!" class="font-medium">Anna Maria Doe</a>
+      </div>
+    </div>
+
+    <h1 class="font-bold text-3xl mb-6">An intriguing title for an interesting article</h1>
+
+    <p>
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi harum tempore
+      cupiditate asperiores provident, itaque, quo ex iusto rerum voluptatum delectus corporis
+      quisquam maxime a ipsam nisi sapiente qui optio! Dignissimos harum quod culpa officiis
+      suscipit soluta labore! Expedita quas, nesciunt similique autem, sunt, doloribus pariatur
+      maxime qui sint id enim. Placeat, maxime labore. Dolores ex provident ipsa impedit, omnis
+      magni earum. Sed fuga ex ducimus consequatur corporis, architecto nesciunt vitae ipsum
+      consequuntur perspiciatis nulla esse voluptatem quos dolorum delectus similique eum vero
+      in est velit quasi pariatur blanditiis incidunt quam.
+    </p>
+  </section>
+  <!-- Section: Design Block -->
+  
+</div>
+
+{% endcomment %}
+ 
+{% endblock %}

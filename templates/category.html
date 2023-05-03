@@ -1,0 +1,40 @@
+{% extends 'base.html' %} 
+{% block title %} home {% endblock %}
+{% block content %}
+
+<div class="grid grid-cols-6 gap-4 p-5">
+    <div class="col-span-1">
+       
+    </div>
+    <div class="col-span-4">
+        
+      
+<div class=" bg-white border  rounded-lg shadow ">
+    <h5 class="mb-2 text-2xl font-bold text-center">{{cat.title}}</h5>
+    
+        <img class="rounded-t-lg h-[50vh] w-full" src="/media/{{cat.image}}" alt="" />
+    <div class="p-5">
+      
+        <ul class="collection">
+            {% for p in posts %}
+            <li class="collection-item">{{p.title}}</li>
+            {% empty %}
+            <h3>No post available </h3>
+            {% endfor %}
+          </ul>
+        
+    </div>
+</div>
+
+    </div>
+    <div class="col-span-1">
+       
+    </div>
+  </div>
+
+
+
+
+
+
+{% endblock  %}

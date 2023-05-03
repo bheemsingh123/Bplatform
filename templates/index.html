@@ -1,0 +1,152 @@
+{% extends 'base.html' %}
+{% block title %}
+  home
+{% endblock %}
+{% block content %}
+
+
+
+
+
+{% comment %} <div class="grid lg:grid-cols-8 gap-4 justify-content-center">
+  <div class="col-span-2">1</div>
+  <div class="col-span-4">4</div>
+  <div class="col-span-2">1</div>
+</div> {% endcomment %}
+
+
+
+
+<div class="  gap-4 p-4">
+
+  <div class="grid lg:grid-cols-5 gap-4">
+    {% for cat in cats %}
+    {% if forloop.counter < 6 %}
+      <div>
+          <img class="h-auto max-w-full rounded-lg" src="/media/{{ cat.image }}" alt="">
+      </div>
+
+      {% endif %}
+      {% endfor %}
+  </div>
+</div>
+
+
+  <div class="grid lg:grid-cols-9 md:grid-cols-1 gap-5 lg:mx-10 mx-5">
+
+    <div class="col-span-2">
+      
+      <div class="grid text-center">
+        <div class="">
+          <a href="#"> <i class="fab fa-facebook-square fa-3x animate-bounce "></i></a>
+          <a href="#"> <i class="fab fa-3x fa-instagram animate-bounce"></i></a>
+          <a href="#"> <i class="fab fa-3x fa-github-square animate-bounce"></i> </a>
+          <a href="#"> <i class="fab fa-3x fa-twitter-square animate-bounce"></i></a>
+          <a href="#"> <i class="fab fa-3x fa-youtube-square animate-bounce"></i> </a>
+          <a href="#"> <i class="fab fa-3x fa-linkedin animate-bounce"></i></a>
+      </div>
+      <div class="grid gap-1">
+      <span class="bg-blue-100 text-blue-800 text-lg font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-blue-900 dark:text-blue-300">Travel</span>
+      <span class="bg-gray-100 text-gray-800 text-lg font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-gray-700 dark:text-gray-300">Food</span>
+      <span class="bg-red-100 text-red-800 text-lg font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-red-900 dark:text-red-300">Health and fitness blogs</span>
+      <span class="bg-green-100 text-green-800 text-lg font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300">Photography blogs</span>
+      <span class="bg-yellow-100 text-yellow-800 text-lg font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-yellow-900 dark:text-yellow-300">DIY craft blogs</span>
+      <span class="bg-indigo-100 text-indigo-800 text-lg font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-indigo-900 dark:text-indigo-300">Music blogs</span>
+      <span class="bg-purple-100 text-purple-800 text-lg font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-purple-900 dark:text-purple-300">Business blogs</span>
+      <span class="bg-pink-100 text-pink-800 text-lg font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-pink-900 dark:text-pink-300">Sports blogs</span>
+      <span class="bg-pink-100 text-pink-800 text-lg font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-pink-900 dark:text-pink-300">Many More..</span>
+      </div>      
+    <div>
+      <div class=" p-4 m-4">
+        <div class=" ">
+            <h2 class="text-center text-orange-500 font-bold text-xl py-2">Advertisement</h2>
+        </div>
+        <div class="">
+            <div class="">
+                <div class="m-2">
+                    <figure>
+                        <img src="https://images.pexels.com/photos/196659/pexels-photo-196659.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" class="img-fluid shadow">
+                    </figure>
+                </div>
+                <div class="m-2">
+                  <figure>
+                    <img src="https://images.pexels.com/photos/34140/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="img-fluid shadow">
+                  </figure>
+              </div>
+              <div class="m-2">
+                <figure>
+                  <img src="https://images.pexels.com/photos/38547/office-freelancer-computer-business-38547.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="img-fluid shadow">
+                </figure>
+            </div>
+            <div class="m-2">
+              <figure>
+                <img src="https://images.pexels.com/photos/196659/pexels-photo-196659.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" class="img-fluid shadow">
+              </figure>
+          </div>
+            </div>
+        </div>
+    </div>
+    </div>
+      </div>
+
+      
+    </div>
+    
+    <div class="col-span-5">
+        {% for p in posts  %}
+        {% if forloop.counter < 6 %}
+        <div class="blog-card">
+          <div class="blog-img">
+            <img src="/media/{{ p.image }}"  alt="blog image">
+          </div>
+          <div class="blog-content">
+            <h3 class="blog-title">{{ p.title }}</h3>
+            <p class="blog-description text-orange-800">{{ p.add_date }}</p>
+            <p class="blog-description">{{ p.content|truncatewords:20|safe }}</p>
+            <a href="/post/{{ p.url }}" class="read-more">Read More</a>
+          </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+    </div>
+    
+    <div class="col-span-2">
+      <div class="text-2xl font-semibold text-center">Blog Categories</div>
+        {% for cat in cats %}
+        {% if forloop.counter < 5 %}
+        <div class="blog-card">
+          <div class="blog-img">
+            <img src="/media/{{ cat.image }}"  alt="blog image">
+          </div>
+          <div class="blog-content">
+            <h3 class="blog-title">{{ cat.title }}</h3>
+            {% comment %} <p class="blog-description">{{ cat.add_date }}</p> {% endcomment %}
+            <p class="blog-description">{{ cat.description|truncatewords:8|safe }}</p>
+            <a href="/category/{{ cat.url }}" class="read-more">Read More</a>
+          </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+    </div>
+  </div>
+
+  {% comment %} <div class="container">
+    <div class="row">
+      <div class="col s8">
+        {% for p in posts %}
+          <div class="row">
+            <div class="col s12 m8">
+              {{ p.content|truncatewords:10|safe }}
+              <div class="">
+                <a href="/post/{{ p.url }}" class="btn bg-primary">read more</a>
+              </div>
+            </div>
+            <div class="col s12 m4">
+              <img src="/media/{{ p.image }}" class="m" />
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div> {% endcomment %}
+{% endblock %}

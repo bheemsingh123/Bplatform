@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>{% block title %}base {% endblock %}</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static "css/style.css" %}" >
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css">
+        
+    </head>
+    <style type="text/css">
+    
+      .blog-card {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        max-width: 800px;
+        margin: 10px;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0px 0px 20px rgba(241, 90, 34, 0.6);
+       
+      }
+      
+      .blog-img {
+        width: 100%;
+        max-width: 300px;
+        margin-right: 20px;
+        overflow: hidden;
+      }
+      
+      .blog-img img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+      }
+      
+      .blog-content {
+        flex: 1;
+      }
+      
+      .blog-title {
+        font-size: 24px;
+        margin: 0 0 10px 0;
+      }
+      
+      .blog-description {
+        font-size: 16px;
+        line-height: 1.5;
+        margin: 0 0 20px 0;
+      }
+      
+      .read-more {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #333;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 4px;
+        transition: background-color 0.2s ease;
+      }
+      
+      .read-more:hover {
+        background-color: #555;
+      } 
+
+{% comment %}  {% endcomment %}
+
+      .about {
+        padding: 60px 0;
+        display: flex;
+        flex-direction: row;
+        text-align: center;
+      }
+      .section-header {
+        margin-bottom: 40px;
+      }
+      .section-header h2 {
+        font-size: 45px;
+        font-family: russo one;
+        text-align: center;
+      }
+      .section-header p {
+        width: 50%;
+        margin: auto;
+        text-align: center;
+        line-height: 1.9;
+      }
+      .single-about img {
+        width: 40%;
+        margin-left: auto;
+  margin-right: auto;
+        
+      }
+      .about-text h2 {
+        font-size: 40px;
+      }
+      .about-text p {
+        width: 50%;
+        margin: auto;
+        padding: 35px 0;
+      }
+      .about-text a {
+        text-decoration: none;
+        background: orangered;
+        color: #fff;
+        display: inline-block;
+        padding: 15px 25px;
+        margin-top: 25px;
+        border-radius: 50px;
+        text-transform: uppercase;
+      }
+.logincard{
+  box-shadow: 0px 0px 20px rgba(241, 90, 34, 0.6);
+  
+}
+
+      {% comment %}  {% endcomment %}
+
+    </style>
+    <body class="">
+
+        {% include 'header.html' %}
+       
+        {% block content %}   {% endblock %}
+
+        {% include 'footer.html' %}
+
+        <script src="{% static 'js/main.js' %}" async defer></script>
+        
+    </body>
+</html>
